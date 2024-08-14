@@ -437,7 +437,7 @@ class SipJsCard extends LitElement {
                             ` : ''
                         }
 
-                        ${this.config.extensions.map((extension: { entity: string | number; person: string | number; icon: any; name: any; extension: any; camera: any; }) => {
+                        ${this.config.extensions.map((extension: { entity: string | number; person: string | number; icon: any; name: any; extension: any; camera: any; endpoint: string | null }) => {
                             var stateObj = this.hass.states[extension.entity];
                             var isMe = (this.hass.user.id == this.hass.states[extension.person].attributes.user_id);
                             if (isMe) this.user = extension;
@@ -715,7 +715,7 @@ class SipJsCard extends LitElement {
         var socket = new WebSocketInterface("wss://" + this.config.server + ":" + this.config.port + this.config.prefix + "/ws");
         var configuration = {
             sockets : [ socket ],
-            uri     : "sip:" + this.user.extension + "@" + this.config.server,
+            uri     : "sip:" + this.user.endpoint ?? this.user.extension + "@" + this.config.server,
             authorization_user: this.user.extension,
             password: this.user.secret,
             register: true

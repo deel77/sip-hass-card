@@ -93,6 +93,7 @@ extensions:
   - person: person.person1
     name: Test person
     extension: '101'
+    endpoint: '101-WS' # use only if expecting different endpoint for WS connection as in MikoPBX
     secret: 1234
     icon: mdi:person
     entity: binary_sensor.myphone
