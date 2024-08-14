@@ -720,6 +720,7 @@ class SipJsCard extends LitElement {
             password: this.user.secret,
             register: true
         };
+        console.log("Configuration" + JSON.stringify(configuration));
 
         this.sipPhone = new UA(configuration);
 
