@@ -697,7 +697,8 @@ class SipJsCard extends LitElement {
                 this.user = {
                     name: this.config.backup_name,
                     extension: this.config.backup_extension,
-                    secret: this.config.backup_secret
+                    secret: this.config.backup_secret,
+                    endpoint: this.config.backup_endpoint
                 };
             } else {
                 this.error = {

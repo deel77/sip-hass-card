@@ -93,7 +93,7 @@ extensions:
   - person: person.person1
     name: Test person
     extension: '101'
-    endpoint: '101-WS' # use only if expecting different endpoint for WS connection as in MikoPBX
+    # endpoint: '101-WS' # use only if expecting different endpoint for extension for WS connection as is in MikoPBX
     secret: 1234
     icon: mdi:person
     entity: binary_sensor.myphone
@@ -121,6 +121,7 @@ iceTimeout: 3 # Default is 5 seconds
 backup_name: Tablet
 backup_extension: '200'
 backup_secret: 1234
+# backup_endpoint: '200-WS' # use only if expecting different endpoint for extension for WS connection as is in MikoPBX
 iceConfig: # Remove if you don't want to use ICE
   iceCandidatePoolSize: 0
   iceTransportPolicy: all
